@@ -1,7 +1,9 @@
 module.exports = {
   use: {
     baseURL: "https://dev.delekhomes.com",
-    headless: false,
+    headless: !!process.env.CI,
+    screenshot: 'only-on-failure',
+    trace: 'on-first-retry',
     storageState: undefined,   
   },
 
